@@ -28,7 +28,7 @@ function createVideo(videoContainer, videoSource, videoId, linkTitle) {
     videoContainer.appendChild(videoWindow);
 
     var player;
-    function onYouTubeIframeAPIReady() {
+    onYouTubeIframeAPIReady = () => {
         player = new YT.Player(videoId, {
             videoId: videoSource,
             playerVars: {
@@ -38,7 +38,7 @@ function createVideo(videoContainer, videoSource, videoId, linkTitle) {
         });
     }
 
-    onYouTubeIframeAPIReady();
+    document.addEventListener("scroll", onYouTubeIframeAPIReady());
 
     let videoLink = document.createElement("a");
     videoLink.textContent = linkTitle;
