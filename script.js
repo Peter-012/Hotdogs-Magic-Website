@@ -21,18 +21,20 @@ createVideo(videoTutorial, youtubeTutorial, "youtube-tutorial-iframe", "Link to 
 
 
 
-// YouTube Player API
 function createVideo(videoContainer, videoSource, videoId, linkTitle) {
+    // YouTube Player iframe placeholder
     let videoWindow = document.createElement("div");
     videoWindow.setAttribute("id", videoId);
     videoContainer.appendChild(videoWindow);
 
+    // YouTube Link (Will load before YouTube Player API)
     let videoLink = document.createElement("a");
     videoLink.textContent = linkTitle;
     videoLink.setAttribute("href", "https://youtu.be/" + videoSource + "?feature=shared");
     videoLink.setAttribute("target", "_blank");
     videoContainer.appendChild(videoLink);
 
+    // YouTube Player API
     var player;
     onYouTubeIframeAPIReady = () => {
         player = new YT.Player(videoId, {
@@ -44,6 +46,7 @@ function createVideo(videoContainer, videoSource, videoId, linkTitle) {
         });
     }
 
+    // Lazy Load the Youtube iframe Video
     document.addEventListener("scroll", onYouTubeIframeAPIReady);
     window.addEventListener("resize", onYouTubeIframeAPIReady);
     window.addEventListener("orientationChange", onYouTubeIframeAPIReady);
