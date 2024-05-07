@@ -38,7 +38,9 @@ function createVideo(videoContainer, videoSource, videoId, linkTitle) {
         });
     }
 
-    document.addEventListener("scroll", onYouTubeIframeAPIReady());
+    document.addEventListener("scroll", onYouTubeIframeAPIReady);
+    window.addEventListener("resize", onYouTubeIframeAPIReady);
+    window.addEventListener("orientationChange", onYouTubeIframeAPIReady);
 
     let videoLink = document.createElement("a");
     videoLink.textContent = linkTitle;
