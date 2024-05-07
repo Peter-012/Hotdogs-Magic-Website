@@ -27,6 +27,12 @@ function createVideo(videoContainer, videoSource, videoId, linkTitle) {
     videoWindow.setAttribute("id", videoId);
     videoContainer.appendChild(videoWindow);
 
+    let videoLink = document.createElement("a");
+    videoLink.textContent = linkTitle;
+    videoLink.setAttribute("href", "https://youtu.be/" + videoSource + "?feature=shared");
+    videoLink.setAttribute("target", "_blank");
+    videoContainer.appendChild(videoLink);
+
     var player;
     onYouTubeIframeAPIReady = () => {
         player = new YT.Player(videoId, {
@@ -41,10 +47,4 @@ function createVideo(videoContainer, videoSource, videoId, linkTitle) {
     document.addEventListener("scroll", onYouTubeIframeAPIReady);
     window.addEventListener("resize", onYouTubeIframeAPIReady);
     window.addEventListener("orientationChange", onYouTubeIframeAPIReady);
-
-    let videoLink = document.createElement("a");
-    videoLink.textContent = linkTitle;
-    videoLink.setAttribute("href", "https://youtu.be/" + videoSource + "?feature=shared");
-    videoLink.setAttribute("target", "_blank");
-    videoContainer.appendChild(videoLink);
 }
