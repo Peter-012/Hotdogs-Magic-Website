@@ -2,8 +2,8 @@
 
 // Input links here
 const githubLink = "https://github.com/Peter-012/Hotdogs-Magic-VR";
-const youtubeDemo = "f3_2lrw-OhA";
-const youtubeTutorial = "z8cZtoAXOnY";
+const youtubeDemo = "T2ZB7GkLhpI";
+const youtubeTutorial = "D-TwP_dcMzU";
 
 
 
