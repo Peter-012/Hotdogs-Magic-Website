@@ -186,6 +186,10 @@ section .row {
     padding-bottom: var(--section-gap);
 }
 
+.website-title {
+    text-align: center;
+}
+
 .title-bar {
     display: flex;
     flex-direction: column;
